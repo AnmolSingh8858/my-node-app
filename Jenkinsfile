@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
+        stage('Print Message') {
             steps {
-                git url: 'https://github.com/AnmolSingh8858/my-node-app.git', branch: 'main'
+                echo '✅ Jenkinsfile is working!'
             }
         }
 
@@ -23,11 +23,12 @@ pipeline {
 
     post {
         always {
-            echo "Build complete"
+            echo "🎯 Build complete"
         }
         failure {
-            echo "Build failed!"
+            echo "❌ Build failed!"
         }
     }
 }
+
 
